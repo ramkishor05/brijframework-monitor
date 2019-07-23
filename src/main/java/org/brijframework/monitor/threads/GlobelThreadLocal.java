@@ -1,14 +1,14 @@
 package org.brijframework.monitor.threads;
 
 import org.brijframework.monitor.GlobelScope;
-import org.brijframework.monitor.factories.GlobelFactroy;
+import org.brijframework.monitor.factories.GlobelScopeMonitorFactroy;
 
 public class GlobelThreadLocal extends ThreadLocal<GlobelScope> {
 	@Override
 	protected GlobelScope initialValue() {
-		GlobelScope service = GlobelFactroy.factory().getService();
-		GlobelFactroy.factory().count++;
-		GlobelFactroy.factory().setObject(service.getId(), service);
+		GlobelScope service = GlobelScopeMonitorFactroy.factory().getService();
+		GlobelScopeMonitorFactroy.factory().count++;
+		GlobelScopeMonitorFactroy.factory().register(service.getId(), service);
 		return service;
 	}
 	

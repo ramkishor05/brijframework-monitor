@@ -1,10 +1,12 @@
 package org.brijframework.monitor;
 
+import org.brijframework.monitor.threads.GlobelThreadLocal;
 import org.brijframework.util.runtime.RandomUtil;
 
 public class GlobelScope{
 	private String id;
 	private String device;
+	private GlobelThreadLocal monitor;
 
 	public GlobelScope() {
 		this.id = RandomUtil.genRandomUUID();
@@ -20,6 +22,14 @@ public class GlobelScope{
 	
 	public String getDevice() {
 		return device;
+	}
+	
+	public GlobelThreadLocal getMonitor() {
+		return monitor;
+	}
+	
+	public void setMonitor(GlobelThreadLocal monitor) {
+		this.monitor = monitor;
 	}
 	
 }

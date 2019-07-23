@@ -6,17 +6,17 @@ import org.brijframework.monitor.PrototypeScope;
 import org.brijframework.monitor.threads.PrototypeThreadLocal;
 import org.brijframework.util.reflect.InstanceUtil;
 
-public class PrototypeFactroy{
+public class PrototypeScopeMonitorFactroy{
 	
 	public int count;
-	private static PrototypeFactroy factory;
+	private static PrototypeScopeMonitorFactroy factory;
 	private PrototypeThreadLocal thread;
 	private PrototypeScope service;
 	private static ConcurrentHashMap<Object, PrototypeScope> container = new ConcurrentHashMap<>();
 
-	public static PrototypeFactroy factory() {
+	public static PrototypeScopeMonitorFactroy factory() {
 		if (factory == null) {
-			factory = InstanceUtil.getSingletonInstance(PrototypeFactroy.class);
+			factory = InstanceUtil.getSingletonInstance(PrototypeScopeMonitorFactroy.class);
 		}
 		return factory;
 	}
@@ -28,7 +28,7 @@ public class PrototypeFactroy{
 		return thread.get();
 	}
 
-	public PrototypeFactroy registerService(PrototypeScope service) {
+	public PrototypeScopeMonitorFactroy registerService(PrototypeScope service) {
 		this.service = service;
 		this.thread = new PrototypeThreadLocal();
 		return factory;

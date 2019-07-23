@@ -1,14 +1,14 @@
 package org.brijframework.monitor.threads;
 
 import org.brijframework.monitor.SessionScope;
-import org.brijframework.monitor.factories.SessionFactroy;
+import org.brijframework.monitor.factories.SessionScopeMonitorFactroy;
 
 public class SessionThreadLocal extends ThreadLocal<SessionScope> {
 	@Override
 	protected SessionScope initialValue() {
-		SessionScope service = SessionFactroy.factory().getService();
-		SessionFactroy.factory().count++;
-		SessionFactroy.factory().setObject(service.getId(), service);
+		SessionScope service = SessionScopeMonitorFactroy.factory().getService();
+		SessionScopeMonitorFactroy.factory().count++;
+		SessionScopeMonitorFactroy.factory().setObject(service.getId(), service);
 		return service;
 	}
 	
