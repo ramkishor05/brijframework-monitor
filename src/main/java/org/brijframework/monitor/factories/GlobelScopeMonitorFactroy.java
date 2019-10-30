@@ -1,6 +1,6 @@
 package org.brijframework.monitor.factories;
 
-import org.brijframework.asm.factories.AbstractFactory;
+import org.brijframework.factories.impl.AbstractFactory;
 import org.brijframework.monitor.GlobelScope;
 import org.brijframework.monitor.threads.GlobelThreadLocal;
 import org.brijframework.util.reflect.InstanceUtil;

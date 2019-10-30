@@ -1,18 +1,17 @@
 package org.brijframework.monitor.factories;
 
-import java.util.concurrent.ConcurrentHashMap;
-
+import org.brijframework.factories.Factory;
+import org.brijframework.factories.impl.AbstractFactory;
 import org.brijframework.monitor.PrototypeScope;
 import org.brijframework.monitor.threads.PrototypeThreadLocal;
 import org.brijframework.util.reflect.InstanceUtil;
 
-public class PrototypeScopeMonitorFactroy{
+public class PrototypeScopeMonitorFactroy extends AbstractFactory<String, PrototypeScope>{
 	
 	public int count;
 	private static PrototypeScopeMonitorFactroy factory;
 	private PrototypeThreadLocal thread;
 	private PrototypeScope service;
-	private static ConcurrentHashMap<Object, PrototypeScope> container = new ConcurrentHashMap<>();
 
 	public static PrototypeScopeMonitorFactroy factory() {
 		if (factory == null) {
@@ -38,8 +37,17 @@ public class PrototypeScopeMonitorFactroy{
 		return this.service;
 	}
 
-	public void setObject(Object key, PrototypeScope service) {
-		container.put(key, service);
+	@Override
+	public Factory loadFactory() {
+		return null;
+	}
+
+	@Override
+	protected void preregister(String key, PrototypeScope value) {
+	}
+
+	@Override
+	protected void postregister(String key, PrototypeScope value) {
 	}
 
 }

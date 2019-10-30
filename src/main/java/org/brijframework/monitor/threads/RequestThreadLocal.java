@@ -8,7 +8,7 @@ public class RequestThreadLocal extends ThreadLocal<RequestScope> {
 	protected RequestScope initialValue() {
 		RequestScope service = RequestScopeMonitorFactroy.factory().getService();
 		RequestScopeMonitorFactroy.factory().count++;
-		RequestScopeMonitorFactroy.factory().setObject(service.getId(), service);
+		RequestScopeMonitorFactroy.factory().register(service.getId(), service);
 		return service;
 	}
 	

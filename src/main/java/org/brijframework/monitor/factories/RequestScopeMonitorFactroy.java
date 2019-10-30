@@ -1,18 +1,17 @@
 package org.brijframework.monitor.factories;
 
-import java.util.concurrent.ConcurrentHashMap;
-
+import org.brijframework.factories.Factory;
+import org.brijframework.factories.impl.AbstractFactory;
 import org.brijframework.monitor.RequestScope;
 import org.brijframework.monitor.threads.RequestThreadLocal;
 import org.brijframework.util.reflect.InstanceUtil;
 
-public class RequestScopeMonitorFactroy{
+public class RequestScopeMonitorFactroy extends AbstractFactory<String, RequestScope>{
 	
 	public int count;
 	private static RequestScopeMonitorFactroy factory;
 	private RequestThreadLocal thread;
 	private RequestScope service;
-	private static ConcurrentHashMap<Object, RequestScope> container = new ConcurrentHashMap<>();
 
 	public static RequestScopeMonitorFactroy factory() {
 		if (factory == null) {
@@ -38,8 +37,17 @@ public class RequestScopeMonitorFactroy{
 		return this.service;
 	}
 
-	public void setObject(Object key, RequestScope service) {
-		container.put(key, service);
+	@Override
+	public Factory loadFactory() {
+		return null;
+	}
+
+	@Override
+	protected void preregister(String key, RequestScope value) {
+	}
+
+	@Override
+	protected void postregister(String key, RequestScope value) {
 	}
 
 }
