@@ -2,7 +2,6 @@ package org.brijframework.monitor.factories;
 
 import java.util.concurrent.ConcurrentHashMap;
 
-import org.brijframework.factories.Factory;
 import org.brijframework.factories.impl.AbstractFactory;
 import org.brijframework.monitor.SessionScope;
 import org.brijframework.monitor.threads.SessionThreadLocal;
@@ -45,7 +44,7 @@ public class SessionScopeMonitorFactroy extends AbstractFactory<String, SessionS
 	}
 
 	@Override
-	public Factory loadFactory() {
+	public SessionScopeMonitorFactroy loadFactory() {
 		return null;
 	}
 

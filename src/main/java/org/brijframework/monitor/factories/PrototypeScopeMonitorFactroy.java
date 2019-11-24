@@ -1,6 +1,5 @@
 package org.brijframework.monitor.factories;
 
-import org.brijframework.factories.Factory;
 import org.brijframework.factories.impl.AbstractFactory;
 import org.brijframework.monitor.PrototypeScope;
 import org.brijframework.monitor.threads.PrototypeThreadLocal;
@@ -38,7 +37,7 @@ public class PrototypeScopeMonitorFactroy extends AbstractFactory<String, Protot
 	}
 
 	@Override
-	public Factory loadFactory() {
+	public PrototypeScopeMonitorFactroy loadFactory() {
 		return null;
 	}
 

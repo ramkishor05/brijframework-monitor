@@ -1,6 +1,5 @@
 package org.brijframework.monitor.factories;
 
-import org.brijframework.factories.Factory;
 import org.brijframework.factories.impl.AbstractFactory;
 import org.brijframework.monitor.RequestScope;
 import org.brijframework.monitor.threads.RequestThreadLocal;
@@ -38,7 +37,7 @@ public class RequestScopeMonitorFactroy extends AbstractFactory<String, RequestS
 	}
 
 	@Override
-	public Factory loadFactory() {
+	public RequestScopeMonitorFactroy loadFactory() {
 		return null;
 	}
 
