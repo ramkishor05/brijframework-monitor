@@ -49,4 +49,10 @@ public class RequestScopeMonitorFactroy extends AbstractFactory<String, RequestS
 	protected void postregister(String key, RequestScope value) {
 	}
 
+	@Override
+	protected void loadContainer(String key, RequestScope value) {
+		// TODO Auto-generated method stub
+		
+	}
+
 }

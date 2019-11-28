@@ -44,4 +44,9 @@ public class GlobelScopeMonitorFactroy extends AbstractFactory<String, GlobelSco
 		return new GlobelScope();
 	}
 
+	@Override
+	protected void loadContainer(String key, GlobelScope value) {
+		
+	}
+
 }
