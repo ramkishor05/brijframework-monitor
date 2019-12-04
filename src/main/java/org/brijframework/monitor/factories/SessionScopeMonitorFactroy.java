@@ -56,10 +56,4 @@ public class SessionScopeMonitorFactroy extends AbstractFactory<String, SessionS
 	protected void postregister(String key, SessionScope value) {
 	}
 
-	@Override
-	protected void loadContainer(String key, SessionScope value) {
-		// TODO Auto-generated method stub
-		
-	}
-
 }

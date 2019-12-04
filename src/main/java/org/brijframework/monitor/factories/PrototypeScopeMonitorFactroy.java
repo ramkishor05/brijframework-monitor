@@ -49,9 +49,4 @@ public class PrototypeScopeMonitorFactroy extends AbstractFactory<String, Protot
 	protected void postregister(String key, PrototypeScope value) {
 	}
 
-	@Override
-	protected void loadContainer(String key, PrototypeScope value) {
-		
-	}
-
 }
